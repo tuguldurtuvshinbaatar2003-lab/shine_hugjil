@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import PostCard from './components/PostCard'
 import KanguruDetail from './components/KanguruDetail'
+import ComputerDetail from './components/ComputerDetail'
 import { POSTS } from './data'
 import styles from './App.module.css'
 
@@ -11,21 +12,17 @@ export default function App() {
   const [detail, setDetail] = useState(null)
 
   const handleCard = (post) => {
-    if (post.id === 'kanguru-2026') {
-      setDetail('kanguru')
-    }
+    if (post.id === 'kanguru-2026') setDetail('kanguru')
+    if (post.id === 'computer-olympiad') setDetail('computer')
   }
 
-  const handleBack = () => {
-    setDetail(null)
-  }
+  const handleBack = () => setDetail(null)
 
   const handleNav = (id) => {
     setPage(id)
     setDetail(null)
   }
 
-  // Show detail page
   if (detail === 'kanguru') {
     return (
       <div>
@@ -36,8 +33,21 @@ export default function App() {
     )
   }
 
-  const homePosts  = POSTS.filter(p => p.category === 'home' || p.id === 'kanguru-2026')
-  const mathPosts  = POSTS.filter(p => p.category === 'math' || p.id === 'kanguru-2026')
+  if (detail === 'computer') {
+    return (
+      <div>
+        <Header activePage={page} onNav={handleNav} />
+        <ComputerDetail onBack={handleBack} />
+        <Footer />
+      </div>
+    )
+  }
+
+  const homePosts = POSTS.filter(p =>
+  p.category === 'home' || p.id === 'kanguru-2026' || p.id === 'computer-olympiad'
+)
+  const mathPosts = POSTS.filter(p => p.category === 'math' || p.id === 'kanguru-2026')
+  const infoPosts = POSTS.filter(p => p.category === 'info')
 
   return (
     <div>
@@ -64,8 +74,8 @@ export default function App() {
 
       {page === 'info' && (
         <>
-          <Hero title="Мэдээлэл зүй" subtitle="Мэдээлэл зүйн хичээл болон материалууд" />
-          <Section title="Мэдээлэл зүйн мэдээ" posts={[]} onCard={handleCard} />
+          <Hero title="Мэдээлэл зүй" subtitle="Мэдээлэл зүйн хичээл, олимпиад болон материалууд" />
+          <Section title="Мэдээлэл зүйн мэдээ" posts={infoPosts} onCard={handleCard} />
         </>
       )}
 
