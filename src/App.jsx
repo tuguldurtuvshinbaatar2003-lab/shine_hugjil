@@ -61,7 +61,7 @@ export default function App() {
             title="Улсын шалгалтын материал"
             subtitle="Сурагчдад зориулсан сургалтын материал, уралдааны дүн болон бусад мэдээлэл"
           />
-          <Section title="Сүүлийн мэдээ" posts={homePosts} onCard={handleCard} />
+          <Section title="Мэдээлэл" posts={homePosts} onCard={handleCard} />
         </>
       )}
 
@@ -84,7 +84,7 @@ export default function App() {
           <Hero title="Тохиргоо" subtitle="Системийн тохиргоо" />
           <div className={styles.empty}>
             <span>⚙️</span>
-            <p>Тохиргооны хэсэг удахгүй нэмэгдэнэ</p>
+            <p>Хоосон</p>
           </div>
         </>
       )}
@@ -121,7 +121,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <strong>Шинэ Хөгжил сургууль</strong>
-      <span> &nbsp;·&nbsp; Бүх эрх хуулиар хамгаалагдсан © 2026</span>
+      <span> &nbsp;·&nbsp; 2026</span>
     </footer>
   )
 }
