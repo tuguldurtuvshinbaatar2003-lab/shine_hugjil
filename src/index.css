@@ -1,0 +1,46 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy:   #0f2744;
+  --blue:   #1a5fa8;
+  --sky:    #2e8fce;
+  --ice:    #e8f4fd;
+  --gold:   #e09820;
+  --white:  #ffffff;
+  --bg:     #f2f7fc;
+  --text:   #0f2744;
+  --muted:  #5a7a96;
+  --border: #ccddf0;
+  --shadow: rgba(15, 39, 68, 0.10);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+a { text-decoration: none; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-up {
+  animation: fadeUp 0.45s ease both;
+}

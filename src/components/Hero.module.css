@@ -1,0 +1,63 @@
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 65%, var(--sky) 100%);
+  padding: 72px 48px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  animation: fadeUp 0.5s ease both;
+}
+
+.quote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 6px;
+}
+
+.author {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 680px) {
+  .hero { padding: 50px 20px 58px; }
+  .title { font-size: 1.7rem; }
+  .quote { font-size: 1rem; }
+}

@@ -1,0 +1,75 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.22);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--gold);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.logoSub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.65;
+  text-transform: uppercase;
+}
+
+.logoMain {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+}
+
+.navBtn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.72);
+  transition: background 0.18s, color 0.18s;
+}
+
+.navBtn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.navBtn.active {
+  background: var(--blue);
+  color: #fff;
+}
+
+@media (max-width: 680px) {
+  .header { padding: 0 16px; }
+  .navBtn { padding: 7px 10px; font-size: 0.8rem; }
+  .logoMain { font-size: 0.9rem; }
+}
